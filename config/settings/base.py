@@ -64,6 +64,7 @@ DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.gis',
     'rest_framework_gis',
+    'rest_framework_swagger',
 
 ]
 THIRD_PARTY_APPS = [

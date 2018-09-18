@@ -7,6 +7,9 @@ from django.views import defaults as default_views
 from django.conf.urls import url
 from rest_framework import routers
 from polygons import views
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Polygon API')
 
 router = routers.DefaultRouter()
 router.register(r'providers', views.ProvidersViewSet)
@@ -29,6 +32,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     url(r'^api/', include(router.urls)),
+    url(r'^document/', schema_view)
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
