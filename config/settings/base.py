@@ -3,7 +3,6 @@ Base settings to build other settings files upon.
 """
 
 import environ
-import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (geo_json/config/settings/base.py - 3 = geo_json/)
 APPS_DIR = ROOT_DIR.path('geo_json')
@@ -264,5 +263,5 @@ SOCIALACCOUNT_ADAPTER = 'geo_json.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = '/usr/local/lib/libgdal.so'
+GEOS_LIBRARY_PATH = '/usr/local/lib/libgeos_c.so'
